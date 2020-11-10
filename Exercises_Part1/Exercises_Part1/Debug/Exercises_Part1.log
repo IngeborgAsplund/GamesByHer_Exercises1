@@ -1,5 +1,7 @@
 ﻿  Exercises_Part1.cpp
-C:\Users\Ingeborg\Documents\GitHub\GamesByHer_Exercises1\Exercises_Part1\Exercises_Part1\Exercises_Part1.cpp(137,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Ingeborg\Documents\GitHub\GamesByHer_Exercises1\Exercises_Part1\Exercises_Part1\Exercises_Part1.cpp(186,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Ingeborg\Documents\GitHub\GamesByHer_Exercises1\Exercises_Part1\Exercises_Part1\Exercises_Part1.cpp(201,19): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Ingeborg\Documents\GitHub\GamesByHer_Exercises1\Exercises_Part1\Exercises_Part1\Exercises_Part1.cpp(138,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Ingeborg\Documents\GitHub\GamesByHer_Exercises1\Exercises_Part1\Exercises_Part1\Exercises_Part1.cpp(187,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Ingeborg\Documents\GitHub\GamesByHer_Exercises1\Exercises_Part1\Exercises_Part1\Exercises_Part1.cpp(202,19): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Ingeborg\Documents\GitHub\GamesByHer_Exercises1\Exercises_Part1\Exercises_Part1\Exercises_Part1.cpp(216,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Ingeborg\Documents\GitHub\GamesByHer_Exercises1\Exercises_Part1\Exercises_Part1\Exercises_Part1.cpp(274,25): warning C4018: '<': signed/unsigned mismatch
   Exercises_Part1.vcxproj -> C:\Users\Ingeborg\Documents\GitHub\GamesByHer_Exercises1\Exercises_Part1\Debug\Exercises_Part1.exe

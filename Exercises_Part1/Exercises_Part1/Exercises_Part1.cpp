@@ -1,6 +1,7 @@
 // Exercises_Part1.cpp : This file contains the 'main' function. Program execution begins and ends there.
 #include <iostream>
 #include <cstdlib> 
+#include <vector>
 #include <ctime> 
 #include <string>
 //Variables
@@ -208,13 +209,91 @@ void Exercise12()
     else
         std::cout << "Faulty input number must be between 1 and 100" << "\n";
 }
+//return the number of elements placed above a certain index
+int CountValuesAbove(std::vector<int>& inVector, int value )
+{
+    int numberOfElementsAbove = 0;
+    for (int i = value; i < inVector.size()-1; i++)
+    {
+        numberOfElementsAbove++;
+    }
+    return numberOfElementsAbove;
+}
+//this function tests a couple of arrays against the above function and prints out the results on new lines
+void Exercise13()
+{
+    std::vector<int> V1{ 1,2,3,5,6,7,9,10 };
+    std::vector<int> V2{ 1,5,7,3,4 };
+    std::vector<int> V3{ 3,7,8,9,50,23};
+
+    for(int i = 1; i<5; i++)
+    {
+        int result1 = CountValuesAbove(V1, i);
+        int result2 = CountValuesAbove(V2, i);
+        int result3 = CountValuesAbove(V3, i);
+
+        std::cout << "\nVector1 has " << result1 << " elements above the element of position " << i;
+        std::cout << "\nVector2 has " << result2 << " elements above the element of position " << i;
+        std::cout << "\nVector2 has " << result3 << " elements above the element of position " << i;
+
+    }
+
+}
+//take two arrays(references) and compare their last element returns true if the last elements are the same false if they are not 
+bool LastStringIsTheSame(std::vector<std::string> &FirstVector,std::vector<std::string> &SecondVector)
+{
+    //disallow the vectors/arrays to be empty
+    if(FirstVector.size()>0&&SecondVector.size()>0)
+    {
+        if (FirstVector[FirstVector.size() - 1] == SecondVector[SecondVector.size() - 1])
+        {
+            std::cout << "\nThe last element in both arrays is the same";
+            return true;
+        }
+    }
+    std::cout << "\n" << "The last element of the arrays is not the same";
+    return false;
+}
+//This function tests some pairs or arrays containing strings to a function that returns true if we have 
+//the same word at the end of the compared arrays.
+void Exercise14()
+{
+    std::vector<std::string> Sentence1{"Kalle","went","to","the","forest"};
+    std::vector<std::string> Sentence2{"Nine","little", "bears","lived","in","the","forest" };
+    std::vector<std::string> Sentence3{"The","forest","is","really","big"}; 
+
+    bool compare1And2 = LastStringIsTheSame(Sentence1, Sentence2);
+    bool compare2And3 = LastStringIsTheSame(Sentence2, Sentence3);
+    bool compare1And3 = LastStringIsTheSame(Sentence1, Sentence3);
+}
+//multilies each element int in a sent in an Array with an input vaule int
+void MultiplyValues(std::vector<int> &inVector, int factor)
+{
+    if(inVector.size()>0)
+    {
+        for(int i = 0; i<inVector.size()-1; i++)
+        {
+            std::cout<<"\n"<<inVector[i] * factor;
+        }
+    }
+}
+//This function creates an array and then calls a function that multiplies the elements of it by a value read from user input
+void Exercise15()
+{
+    std::cout << "Input the value you want to multiply the array elements with"<<"\n";
+    int multiplyVal = 0;
+    std::cin >> multiplyVal;
+    std::vector<int> MultiplicationTable{ 1,2,3,4,5,6,7,8,9,10 };
+    MultiplyValues(MultiplicationTable,multiplyVal);
+
+}
 //in order to be able to easier execute the different snippets of code above I put them in a switch three using the user input 
 // to drive the different smaller programs as defined above.
 void MainLoop()
 {
     while (!finished)
     {
-        std::cout <<"\n"<< "Select a function from 1 to 12 to run or 0 to exit"<<"\n";
+        std::cout <<"\n"<< "Select a function from 1 to 15 to run or 0 to exit"<<"\n";
         std::cin >> userSelection;
         switch (userSelection)
         {
@@ -253,6 +332,15 @@ void MainLoop()
             break;
         case 12:
             Exercise12();
+            break;
+        case 13:
+            Exercise13();
+            break;
+        case 14:
+            Exercise14();
+            break;
+        case 15:
+            Exercise15();
             break;
         case 0:
             finished = true;
